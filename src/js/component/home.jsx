@@ -4,11 +4,9 @@ import Jumbotron from "./jumbotron/Jumbotron";
 import Navbar from "./navbar/Navbar";
 
 const Home = () => {
-  const Cards = {
-    title: ["title1", "title2", "title3", "title4"],
-    description: ["description1", "description2", "description3", "description4"]
-  };
-
+  const Cards = [{title : 'title1', description: "description1"},{title : 'title2', description: "description2"},{title : 'title3', description: "description3"}, {title : 'title4', description: "description4"}];
+   
+  
   return (
     <>
       <Navbar />
@@ -21,12 +19,12 @@ const Home = () => {
       />
       <div className="d-flex container-fluid">
         <div className="row">
-          {Cards.title.map((title, index) => (
+          {Cards.map((element, index) => (
             <div key={index} className="col">
               <Card
-                title={title}
-                description={Cards.description[index]}
-                bottonDescription={"bottonJumbotron"}
+                title={element.title}
+                description={element.description}
+                bottonDescription={"botton"}
               />
             </div>
           ))}
